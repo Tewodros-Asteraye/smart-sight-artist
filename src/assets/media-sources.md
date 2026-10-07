@@ -10,3 +10,10 @@ License: https://unsplash.com/license — free commercial use, no attribution re
 
 ## Logo
 Official user-supplied image.png, used unchanged. Favicon is a proportional, padded small version of the same file.
+
+## Video — Mixkit Stock Video Free License
+- Source: https://mixkit.co/free-stock-video/area-in-the-savanna-aerial-shot-3880/
+- Download: https://assets.mixkit.co/videos/3880/3880-720.mp4
+- License: https://mixkit.co/license/#videoFree — source page declares copyrightNotice Free and videoFree. Commercial use allowed.
+- Depicts savanna terrain. Exact filming location is not stated on source page; do not claim the footage depicts Ethiopia or a company site.
+- Restricted-license waterfall footage and geographically inappropriate sunset footage were rejected and are not used.
