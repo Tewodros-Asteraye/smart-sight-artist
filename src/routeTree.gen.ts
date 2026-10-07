@@ -10,33 +10,193 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CarbonMarketsRouteImport } from './routes/carbon-markets'
+import { Route as ClimateBusinessModelsRouteImport } from './routes/climate-business-models'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DigitalMrvRouteImport } from './routes/digital-mrv'
+import { Route as FeaturedProjectRouteImport } from './routes/featured-project'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as WhyAfricaClimateActionsRouteImport } from './routes/why-africa-climate-actions'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarbonMarketsRoute = CarbonMarketsRouteImport.update({
+  id: '/carbon-markets',
+  path: '/carbon-markets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClimateBusinessModelsRoute = ClimateBusinessModelsRouteImport.update({
+  id: '/climate-business-models',
+  path: '/climate-business-models',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalMrvRoute = DigitalMrvRouteImport.update({
+  id: '/digital-mrv',
+  path: '/digital-mrv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturedProjectRoute = FeaturedProjectRouteImport.update({
+  id: '/featured-project',
+  path: '/featured-project',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhyAfricaClimateActionsRoute = WhyAfricaClimateActionsRouteImport.update({
+  id: '/why-africa-climate-actions',
+  path: '/why-africa-climate-actions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/carbon-markets': typeof CarbonMarketsRoute
+  '/climate-business-models': typeof ClimateBusinessModelsRoute
+  '/contact': typeof ContactRoute
+  '/digital-mrv': typeof DigitalMrvRoute
+  '/featured-project': typeof FeaturedProjectRoute
+  '/impact': typeof ImpactRoute
+  '/partners': typeof PartnersRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/services': typeof ServicesRoute
+  '/why-africa-climate-actions': typeof WhyAfricaClimateActionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/carbon-markets': typeof CarbonMarketsRoute
+  '/climate-business-models': typeof ClimateBusinessModelsRoute
+  '/contact': typeof ContactRoute
+  '/digital-mrv': typeof DigitalMrvRoute
+  '/featured-project': typeof FeaturedProjectRoute
+  '/impact': typeof ImpactRoute
+  '/partners': typeof PartnersRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/services': typeof ServicesRoute
+  '/why-africa-climate-actions': typeof WhyAfricaClimateActionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/carbon-markets': typeof CarbonMarketsRoute
+  '/climate-business-models': typeof ClimateBusinessModelsRoute
+  '/contact': typeof ContactRoute
+  '/digital-mrv': typeof DigitalMrvRoute
+  '/featured-project': typeof FeaturedProjectRoute
+  '/impact': typeof ImpactRoute
+  '/partners': typeof PartnersRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/services': typeof ServicesRoute
+  '/why-africa-climate-actions': typeof WhyAfricaClimateActionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/carbon-markets'
+    | '/climate-business-models'
+    | '/contact'
+    | '/digital-mrv'
+    | '/featured-project'
+    | '/impact'
+    | '/partners'
+    | '/privacy'
+    | '/projects'
+    | '/services'
+    | '/why-africa-climate-actions'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/carbon-markets'
+    | '/climate-business-models'
+    | '/contact'
+    | '/digital-mrv'
+    | '/featured-project'
+    | '/impact'
+    | '/partners'
+    | '/privacy'
+    | '/projects'
+    | '/services'
+    | '/why-africa-climate-actions'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/carbon-markets'
+    | '/climate-business-models'
+    | '/contact'
+    | '/digital-mrv'
+    | '/featured-project'
+    | '/impact'
+    | '/partners'
+    | '/privacy'
+    | '/projects'
+    | '/services'
+    | '/why-africa-climate-actions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CarbonMarketsRoute: typeof CarbonMarketsRoute
+  ClimateBusinessModelsRoute: typeof ClimateBusinessModelsRoute
+  ContactRoute: typeof ContactRoute
+  DigitalMrvRoute: typeof DigitalMrvRoute
+  FeaturedProjectRoute: typeof FeaturedProjectRoute
+  ImpactRoute: typeof ImpactRoute
+  PartnersRoute: typeof PartnersRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProjectsRoute: typeof ProjectsRoute
+  ServicesRoute: typeof ServicesRoute
+  WhyAfricaClimateActionsRoute: typeof WhyAfricaClimateActionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +208,107 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carbon-markets': {
+      id: '/carbon-markets'
+      path: '/carbon-markets'
+      fullPath: '/carbon-markets'
+      preLoaderRoute: typeof CarbonMarketsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/climate-business-models': {
+      id: '/climate-business-models'
+      path: '/climate-business-models'
+      fullPath: '/climate-business-models'
+      preLoaderRoute: typeof ClimateBusinessModelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-mrv': {
+      id: '/digital-mrv'
+      path: '/digital-mrv'
+      fullPath: '/digital-mrv'
+      preLoaderRoute: typeof DigitalMrvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/featured-project': {
+      id: '/featured-project'
+      path: '/featured-project'
+      fullPath: '/featured-project'
+      preLoaderRoute: typeof FeaturedProjectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-africa-climate-actions': {
+      id: '/why-africa-climate-actions'
+      path: '/why-africa-climate-actions'
+      fullPath: '/why-africa-climate-actions'
+      preLoaderRoute: typeof WhyAfricaClimateActionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CarbonMarketsRoute: CarbonMarketsRoute,
+  ClimateBusinessModelsRoute: ClimateBusinessModelsRoute,
+  ContactRoute: ContactRoute,
+  DigitalMrvRoute: DigitalMrvRoute,
+  FeaturedProjectRoute: FeaturedProjectRoute,
+  ImpactRoute: ImpactRoute,
+  PartnersRoute: PartnersRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProjectsRoute: ProjectsRoute,
+  ServicesRoute: ServicesRoute,
+  WhyAfricaClimateActionsRoute: WhyAfricaClimateActionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
