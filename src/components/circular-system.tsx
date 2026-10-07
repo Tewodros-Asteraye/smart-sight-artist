@@ -1,0 +1,5 @@
+import { useEffect, useState } from 'react';
+import { ArrowRight, Pause, Play, Repeat2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cycleSteps } from '@/lib/site-content';
+export function CircularSystem(){const [active,setActive]=useState(0);const [playing,setPlaying]=useState(false);useEffect(()=>{if(!playing)return;const timer=setInterval(()=>setActive(n=>(n+1)%cycleSteps.length),2500);return()=>clearInterval(timer)},[playing]);return <div className="cycle-tool"><div className="cycle-label"><span>The circular system</span><Button variant="ghost" size="icon" aria-label={playing?'Pause circular system':'Play circular system'} onClick={()=>setPlaying(!playing)}>{playing?<Pause/>:<Play/>}</Button></div><div className="cycle-nodes">{cycleSteps.map(([name],i)=><Button key={name} variant={active===i?'brand':'cycle'} className="cycle-node" onClick={()=>{setActive(i);setPlaying(false)}} aria-pressed={active===i}>{name}{i===cycleSteps.length-1?<Repeat2/>:<ArrowRight/>}</Button>)}</div><p className="cycle-detail" aria-live={playing?'off':'polite'}><strong>{cycleSteps[active]?.[0]}</strong> — {cycleSteps[active]?.[1]}</p></div>}
