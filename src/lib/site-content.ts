@@ -67,7 +67,7 @@ export const pages: Record<string, ContentPage> = {
 export const team = [
  ['Dr Biruk Alemu','Chief Executive Officer','Provides overall leadership, including corporate strategy, partnerships, project development, client engagement, and company growth.'],
  ['Dr Dejene Girma','Climate Mitigation, Renewable Energy and Carbon Market Finance','Leads technical work related to climate mitigation, renewable energy solutions, carbon markets, and climate finance.'],
- ['Dr Teg en Cherinet'.replace('Teg en','Tegen'),'Senior Expert in Climate Smart Agriculture','Supports resilient and resource-efficient climate-smart agricultural production.'],
+ ['Dr Tegen Cherinet','Senior Expert in Climate Smart Agriculture','Supports resilient and resource-efficient climate-smart agricultural production.'],
  ['Dr Samuel Ayalew','AI Expert','Supports artificial intelligence, digital systems, and data analytics for climate, agriculture, energy, and MRV.'],
  ['Dr Esubalew Ayalew','Economist','Supports economic analysis, business modelling, investment assessment, and evaluation of financial and development outcomes.'],
  ['Dr Abebe Bayu','Accounting and Finance','Supports accounting, financial management, budgeting, financial controls, and company finance functions.']
