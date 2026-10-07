@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowRight, ArrowUpRight, ChevronDown, MapPin, Database, Radio, FileCheck2, Leaf, Activity, ChartNoAxesCombined, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronDown, MapPin, Radio, Activity, ChartNoAxesCombined, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ServicesGrid, CircularRing, MrvDashboard, PartnersGrid } from '@/components/home-sections';
 import { HeroMedia } from '@/components/hero-media';
