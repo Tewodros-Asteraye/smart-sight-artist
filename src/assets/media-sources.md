@@ -16,4 +16,5 @@ Official user-supplied image.png, used unchanged. Favicon is a proportional, pad
 - Download: https://assets.mixkit.co/videos/3880/3880-720.mp4
 - License: https://mixkit.co/license/#videoFree — source page declares copyrightNotice Free and videoFree. Commercial use allowed.
 - Depicts savanna terrain. Exact filming location is not stated on source page; do not claim the footage depicts Ethiopia or a company site.
+- Served as an optimized VP9 WebM conversion for browser compatibility, with the Malawi photograph as fallback and reduced-motion default.
 - Restricted-license waterfall footage and geographically inappropriate sunset footage were rejected and are not used.
