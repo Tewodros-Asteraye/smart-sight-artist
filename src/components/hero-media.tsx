@@ -1,5 +1,5 @@
 import { media } from '@/lib/media';
-import video from '@/assets/savanna.mp4.asset.json';
+import video from '@/assets/savanna.webm.asset.json';
 import { useEffect, useRef, useState } from 'react';
 import { Pause, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
