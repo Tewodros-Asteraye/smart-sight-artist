@@ -63,7 +63,7 @@ const principles = [
 
 function CapabilityNetwork() {
   const [active, setActive] = useState(0);
-  const Active = capabilities[active];
+  const Active = capabilities[active] ?? capabilities[0]!;
   return (
     <div className="capnet">
       <div className="capnet-center" aria-live="polite">
