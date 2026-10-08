@@ -32,7 +32,7 @@ export function CircularRing() {
     <div className="ring" role="group" aria-label="Circular economy steps">
       <svg viewBox="0 0 100 100" className="ring-track" aria-hidden="true"><circle cx="50" cy="50" r="40" /><circle cx="50" cy="50" r="40" className="ring-progress" style={{ strokeDashoffset: 251.3 * (1 - (active + 1) / n) }} /></svg>
       {cycleSteps.map(([name], i) => { const a = (i / n) * 2 * Math.PI - Math.PI / 2; return <button key={name} type="button" className={`ring-node ${i === active ? 'is-active' : ''}`} style={{ left: `${50 + 40 * Math.cos(a)}%`, top: `${50 + 40 * Math.sin(a)}%` }} onClick={() => setActive(i)} aria-pressed={i === active}><span className="ring-dot">{i + 1}</span><span className="ring-name">{name}</span></button>; })}
-      <div className="ring-center" aria-live="polite"><span className="ring-step">Step {active + 1} of {n}</span><strong>{cycleSteps[active][0]}</strong><em>{impacts[active]}</em><p>{cycleSteps[active][1]}</p></div>
+      <div className="ring-center" aria-live="polite"><span className="ring-step">Step {active + 1} of {n}</span><strong>{cycleSteps[active]?.[0]}</strong><em>{impacts[active]}</em><p>{cycleSteps[active]?.[1]}</p></div>
     </div>
   </div>;
 }
@@ -61,7 +61,7 @@ const partnerLogos: Record<string, string> = {
 };
 
 export function PartnersGrid() {
-  const list = pages.partners.sections.map(p => p.title);
+  const list = (pages["partners"]?.sections ?? []).map(p => p.title);
   return <div className="marquee" aria-label="Partner organisations">
     <ul className="sr-only">{list.map(t => <li key={t}>{t}</li>)}</ul>
     <div className="marquee-track" aria-hidden="true">{[...list, ...list].map((t, i) => <div className="marquee-item" key={i}><img src={partnerLogos[t]} alt="" loading="lazy" /><span>{t}</span></div>)}</div>
