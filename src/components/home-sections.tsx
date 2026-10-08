@@ -2,6 +2,13 @@ import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, Sun, Sprout, Coins, Radio, Briefcase, Recycle, Activity, Gauge, Flag, MapPin, Cpu } from 'lucide-react';
 import { cycleSteps, pages } from '@/lib/site-content';
+import moa from '@/assets/partner-moa.png.asset.json';
+import mopd from '@/assets/partner-mopd.png.asset.json';
+import wsu from '@/assets/partner-wsu.jpg.asset.json';
+import ilri from '@/assets/partner-ilri.png.asset.json';
+import worldbank from '@/assets/partner-worldbank.png.asset.json';
+import undp from '@/assets/partner-undp.png.asset.json';
+import unep from '@/assets/partner-unep.jpg.asset.json';
 
 const services = [
   { icon: Sun, title: 'Renewable Energy & Biogas', body: 'Site assessment, system design, installation, commissioning and performance monitoring.', to: '/services' as const },
@@ -43,6 +50,20 @@ export function MrvDashboard() {
   </div>;
 }
 
+const partnerLogos: Record<string, string> = {
+  'Ethiopian Ministry of Agriculture': moa.url,
+  'Ethiopian Ministry of Planning and Development': mopd.url,
+  'Wolaita Sodo University': wsu.url,
+  'International Livestock Research Institute (ILRI)': ilri.url,
+  'World Bank': worldbank.url,
+  'United Nations Development Programme (UNDP)': undp.url,
+  'United Nations Environment Programme (UNEP)': unep.url,
+};
+
 export function PartnersGrid() {
-  return <div className="partner-grid">{pages.partners.sections.map(p => <div className="partner-cell" key={p.title}><span>{p.title}</span></div>)}</div>;
+  const list = pages.partners.sections.map(p => p.title);
+  return <div className="marquee" aria-label="Partner organisations">
+    <ul className="sr-only">{list.map(t => <li key={t}>{t}</li>)}</ul>
+    <div className="marquee-track" aria-hidden="true">{[...list, ...list].map((t, i) => <div className="marquee-item" key={i}><img src={partnerLogos[t]} alt="" loading="lazy" /><span>{t}</span></div>)}</div>
+  </div>;
 }
