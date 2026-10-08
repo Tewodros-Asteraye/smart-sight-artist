@@ -18,3 +18,6 @@ Official user-supplied image.png, used unchanged. Favicon is a proportional, pad
 - Depicts savanna terrain. Exact filming location is not stated on source page; do not claim the footage depicts Ethiopia or a company site.
 - Served as an optimized VP9 WebM conversion for browser compatibility, with the Malawi photograph as fallback and reduced-motion default.
 - Restricted-license waterfall footage and geographically inappropriate sunset footage were rejected and are not used.
+
+## Partner logos
+Official partner logos supplied by the client, used unchanged. Homepage logo is the official logo with the black background made transparent (colours unchanged). Favicon is the emblem from that same logo.
