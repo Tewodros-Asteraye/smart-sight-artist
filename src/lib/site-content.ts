@@ -1,3 +1,10 @@
+import birukPortrait from '@/assets/team/team-biruk.svg';
+import dejenePortrait from '@/assets/team/team-dejene.svg';
+import tegenPortrait from '@/assets/team/team-tegen.svg';
+import samuelPortrait from '@/assets/team/team-samuel.svg';
+import esubalewPortrait from '@/assets/team/team-esubalew.svg';
+import abebePortrait from '@/assets/team/team-abebe.svg';
+
 export type ContentPage = { title: string; eyebrow: string; intro: string; sections: { title: string; body: string }[]; image?: 'solar' | 'farm' | 'data' | 'landscape' };
 export const pages: Record<string, ContentPage> = {
   about: {title:'Turning climate challenges into practical solutions',eyebrow:'About Africa Climate Actions',intro:'We connect science, engineering, finance, digital technologies, local knowledge, and partnerships to develop practical climate solutions for Africa.', image:'landscape',sections:[
@@ -72,6 +79,14 @@ export const team = [
  ['Dr Esubalew Ayalew','Economist','Supports economic analysis, business modelling, investment assessment, and evaluation of financial and development outcomes.'],
  ['Dr Abebe Bayu','Accounting and Finance','Supports accounting, financial management, budgeting, financial controls, and company finance functions.']
 ];
+export const teamPortraits: Record<string, string> = {
+  'Dr Biruk Alemu': birukPortrait,
+  'Dr Dejene Girma': dejenePortrait,
+  'Dr Tegen Cherinet': tegenPortrait,
+  'Dr Samuel Ayalew': samuelPortrait,
+  'Dr Esubalew Ayalew': esubalewPortrait,
+  'Dr Abebe Bayu': abebePortrait,
+};
 export const cycleSteps = [
  ['Livestock','Dairy and livestock production begins the resource cycle.'],['Manure','Manure is collected and managed as a productive resource.'],['Biodigester','Anaerobic digestion converts organic matter into biogas and digestate.'],['Biogas','Captured gas can be cleaned and upgraded for productive uses.'],['Energy','Biogas can support heat, electricity, or potential transport fuel applications.'],['Digestate','The remaining material contains plant nutrients and organic matter.'],['Organic fertilizer','Properly treated digestate returns nutrients to agricultural production.'],['Forage & feed','Forage and feed return to livestock production, completing the cycle.']
 ];

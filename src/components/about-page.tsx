@@ -1,16 +1,17 @@
 import { Link } from '@tanstack/react-router';
 import { ArrowRight, ArrowUpRight, ChevronRight, FlaskConical, Cog, Landmark, Cpu, Handshake, Users, Zap, Leaf, BarChart3, Database, Compass, Recycle } from 'lucide-react';
 import { useState } from 'react';
-import { team } from '@/lib/site-content';
+import { team, teamPortraits } from '@/lib/site-content';
 import { media, mediaAlt } from '@/lib/media';
 import { Button } from '@/components/ui/button';
-import partnerMoa from '@/assets/partner-moa.png.asset.json';
-import partnerMopd from '@/assets/partner-mopd.png.asset.json';
-import partnerWsu from '@/assets/partner-wsu.jpg.asset.json';
-import partnerIlri from '@/assets/partner-ilri.png.asset.json';
-import partnerWorldbank from '@/assets/partner-worldbank.png.asset.json';
-import partnerUndp from '@/assets/partner-undp.png.asset.json';
-import partnerUnep from '@/assets/partner-unep.jpg.asset.json';
+import partnerMoa from '@/assets/partner-moa.png';
+import partnerMopd from '@/assets/partner-mopd.png';
+import partnerWsu from '@/assets/partner-wsu.jpg';
+import partnerIlri from '@/assets/partner-ilri.png';
+import partnerWorldbank from '@/assets/partner-worldbank.png';
+import partnerUndp from '@/assets/partner-undp.png';
+import partnerUnep from '@/assets/partner-unep.jpg';
+import landscape from '@/assets/landscape.jpg';
 
 const capabilities = [
   { name: 'Science', icon: FlaskConical, note: 'Climate science and research methods ground every project.' },
@@ -45,13 +46,13 @@ const ideaFlow = ['Idea', 'Science', 'Engineering', 'Finance', 'Implementation',
 const ecosystem = ['Government', 'Research', 'Finance', 'Technology', 'Development', 'Private sector', 'Communities'];
 
 const partnerLogos = [
-  { src: partnerMoa.url, name: 'Ethiopian Ministry of Agriculture' },
-  { src: partnerMopd.url, name: 'Ethiopian Ministry of Planning and Development' },
-  { src: partnerWsu.url, name: 'Wolaita Sodo University' },
-  { src: partnerIlri.url, name: 'International Livestock Research Institute (ILRI)' },
-  { src: partnerWorldbank.url, name: 'World Bank' },
-  { src: partnerUndp.url, name: 'United Nations Development Programme (UNDP)' },
-  { src: partnerUnep.url, name: 'United Nations Environment Programme (UNEP)' },
+  { src: partnerMoa, name: 'Ethiopian Ministry of Agriculture' },
+  { src: partnerMopd, name: 'Ethiopian Ministry of Planning and Development' },
+  { src: partnerWsu, name: 'Wolaita Sodo University' },
+  { src: partnerIlri, name: 'International Livestock Research Institute (ILRI)' },
+  { src: partnerWorldbank, name: 'World Bank' },
+  { src: partnerUndp, name: 'United Nations Development Programme (UNDP)' },
+  { src: partnerUnep, name: 'United Nations Environment Programme (UNEP)' },
 ];
 
 const principles = [
@@ -99,7 +100,7 @@ export function AboutPage() {
     <main>
       {/* 1. Hero */}
       <section className="hero about-hero">
-        <img className="hero-media" src={media.landscape.url} alt={mediaAlt.landscape} fetchPriority="high" />
+        <img className="hero-media" src={media.landscape} alt={mediaAlt.landscape} fetchPriority="high" />
         <div className="shell hero-inner">
           <div className="breadcrumb hero-breadcrumb"><Link to="/">Home</Link><ChevronRight /><span>About</span></div>
           <div className="eyebrow">About Africa Climate Actions</div>
@@ -116,7 +117,7 @@ export function AboutPage() {
       <section className="section">
         <div className="shell about-split">
           <figure className="about-split-media">
-            <img src={media.farm.url} alt={mediaAlt.farm} loading="lazy" />
+            <img src={media.farm} alt={mediaAlt.farm} loading="lazy" />
             <figcaption className="image-caption">Illustrative stock photography · Unsplash. Not a photograph of a company project.</figcaption>
           </figure>
           <div className="about-split-copy">
@@ -262,13 +263,21 @@ export function AboutPage() {
             </div>
           </div>
           <div className="team-grid">
-            {team.map(([name, role, description]) => (
-              <article className="team-person" key={name}>
-                <h3>{name}</h3>
-                <div className="team-role">{role}</div>
-                <p>{description}</p>
-              </article>
-            ))}
+            {team.map(([name, role, description]) => {
+              const portrait = teamPortraits[name];
+              return (
+                <article className="team-person" key={name}>
+                  {portrait && (
+                    <div className="team-photo-wrap">
+                      <img className="team-photo" src={portrait} alt={`${name} — ${role}`} loading="lazy" />
+                    </div>
+                  )}
+                  <h3>{name}</h3>
+                  <div className="team-role">{role}</div>
+                  <p>{description}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

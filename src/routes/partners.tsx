@@ -1,3 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ContentPage, pageHead } from "@/components/content-page";
-export const Route = createFileRoute("/partners")({ head: () => pageHead("partners"), component: () => <ContentPage pageKey="partners" /> });
+import { PartnersEngagementPage } from "@/components/engagement-pages";
+
+export const Route = createFileRoute("/partners")({
+  head: () => ({
+    meta: [
+      { title: "Partners & Engagement | Africa Climate Actions PLC" },
+      {
+        name: "description",
+        content:
+          "Explore collaboration areas connecting institutions, research, finance, technology, development, and local knowledge.",
+      },
+    ],
+  }),
+  component: PartnersEngagementPage,
+});

@@ -8,6 +8,12 @@ License: https://unsplash.com/license — free commercial use, no attribution re
 - Dairy cattle (South Africa): https://unsplash.com/photos/a-cow-standing-in-a-field-xatoEFvOIMs
 - Satellite infrastructure in agricultural fields: https://unsplash.com/photos/a-satellite-dish-sits-amidst-fields-Qn1ymW6ShwU
 
+## Projects page photographs — Unsplash License
+These are representative stock contexts, not photographs of Africa Climate Actions PLC projects. Downloaded and optimized 8 October 2026 as self-hosted WebP files under `src/assets/projects/`.
+- Ethiopia cattle: Photo by Hanna Grace, herd walking along a dirt road, Ethiopia. https://unsplash.com/photos/a-herd-of-cattle-walking-down-a-dirt-road-F07E5ak-Im8 — https://images.unsplash.com/photo-1637356841284-39c7e1da064e
+- East Africa harvest: Photo by Ali Mkumbwa, woman holding harvested rice, Mbeya, Tanzania. https://unsplash.com/photos/a-woman-holding-a-handful-of-grain-in-her-hands-s8Kzx7C6yqo — https://images.unsplash.com/photo-1710149484964-d966b771c204
+- Crop and soil: Photo by Markus Spiske, seedlings growing in soil; location not specified. https://unsplash.com/photos/green-leafed-plants-on-black-soil-at-daytime-71uUjIt3cIs — https://images.unsplash.com/photo-1523349312806-f5dde0a01c32
+
 ## Logo
 Official user-supplied image.png, used unchanged. Favicon is a proportional, padded small version of the same file.
 

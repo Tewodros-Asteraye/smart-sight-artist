@@ -1,3 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ContentPage, pageHead } from "@/components/content-page";
-export const Route = createFileRoute("/carbon-markets")({ head: () => pageHead("carbon-markets"), component: () => <ContentPage pageKey="carbon-markets" /> });
+import { CarbonMarketsPage } from "@/components/engagement-pages";
+
+export const Route = createFileRoute("/carbon-markets")({
+  head: () => ({
+    meta: [
+      { title: "Carbon Markets & Climate Finance | Africa Climate Actions PLC" },
+      {
+        name: "description",
+        content:
+          "Assess climate-project opportunities, carbon-market readiness, and climate-finance preparation with Africa Climate Actions PLC.",
+      },
+    ],
+  }),
+  component: CarbonMarketsPage,
+});

@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, Sun, Sprout, Coins, Radio, Briefcase, Recycle, Activity, Gauge, Flag, MapPin, Cpu } from 'lucide-react';
 import { cycleSteps, pages } from '@/lib/site-content';
-import moa from '@/assets/partner-moa.png.asset.json';
-import mopd from '@/assets/partner-mopd.png.asset.json';
-import wsu from '@/assets/partner-wsu.jpg.asset.json';
-import ilri from '@/assets/partner-ilri.png.asset.json';
-import worldbank from '@/assets/partner-worldbank.png.asset.json';
-import undp from '@/assets/partner-undp.png.asset.json';
-import unep from '@/assets/partner-unep.jpg.asset.json';
+import moa from '@/assets/partner-moa.png';
+import mopd from '@/assets/partner-mopd.png';
+import wsu from '@/assets/partner-wsu.jpg';
+import ilri from '@/assets/partner-ilri.png';
+import worldbank from '@/assets/partner-worldbank.png';
+import undp from '@/assets/partner-undp.png';
+import unep from '@/assets/partner-unep.jpg';
 
 const services = [
   { icon: Sun, title: 'Renewable Energy & Biogas', body: 'Site assessment, system design, installation, commissioning and performance monitoring.', to: '/services' as const },
@@ -51,13 +51,13 @@ export function MrvDashboard() {
 }
 
 const partnerLogos: Record<string, string> = {
-  'Ethiopian Ministry of Agriculture': moa.url,
-  'Ethiopian Ministry of Planning and Development': mopd.url,
-  'Wolaita Sodo University': wsu.url,
-  'International Livestock Research Institute (ILRI)': ilri.url,
-  'World Bank': worldbank.url,
-  'United Nations Development Programme (UNDP)': undp.url,
-  'United Nations Environment Programme (UNEP)': unep.url,
+  'Ethiopian Ministry of Agriculture': moa,
+  'Ethiopian Ministry of Planning and Development': mopd,
+  'Wolaita Sodo University': wsu,
+  'International Livestock Research Institute (ILRI)': ilri,
+  'World Bank': worldbank,
+  'United Nations Development Programme (UNDP)': undp,
+  'United Nations Environment Programme (UNEP)': unep,
 };
 
 export function PartnersGrid() {

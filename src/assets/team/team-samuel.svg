@@ -1,0 +1,29 @@
+<svg width="720" height="860" viewBox="0 0 720 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-samuel" x1="72" y1="54" x2="650" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDF5F0"/>
+      <stop offset="1" stop-color="#DCEAE1"/>
+    </linearGradient>
+    <linearGradient id="shirt-samuel" x1="240" y1="520" x2="492" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#214B40"/>
+      <stop offset="1" stop-color="#183E32"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="860" rx="36" fill="url(#bg-samuel)"/>
+  <circle cx="360" cy="286" r="183" fill="#F8F3EC" opacity="0.88"/>
+  <path d="M297 349C297 273 328 223 360 223C392 223 423 273 423 349V394H297V349Z" fill="#E8BA96"/>
+  <path d="M301 334C313 281 334 246 360 246C386 246 407 281 419 334C426 373 416 401 399 416C387 427 374 433 360 433C346 433 333 427 321 416C304 401 294 373 301 334Z" fill="#F0C7A4"/>
+  <path d="M314 330C323 285 339 261 360 261C381 261 397 285 406 330C411 354 405 373 392 386C383 395 373 401 360 401C347 401 337 395 328 386C315 373 309 354 314 330Z" fill="#D99868" opacity="0.28"/>
+  <path d="M304 315C317 281 335 255 360 255C385 255 403 281 416 315L423 352C403 340 385 333 360 333C335 333 317 340 297 352L304 315Z" fill="#1B1B1B"/>
+  <path d="M330 305C337 293 348 286 360 286C372 286 383 293 390 305C382 287 372 278 360 278C348 278 338 287 330 305Z" fill="#171717"/>
+  <ellipse cx="334" cy="348" rx="8.5" ry="10.5" fill="#171717"/>
+  <ellipse cx="386" cy="348" rx="8.5" ry="10.5" fill="#171717"/>
+  <path d="M349 362C355 369 362 372 369 372C374 372 380 369 384 362" stroke="#9C5F48" stroke-width="5" stroke-linecap="round"/>
+  <path d="M339 389C349 396 355 400 360 400C365 400 371 396 381 389" stroke="#A75F4B" stroke-width="6" stroke-linecap="round"/>
+  <path d="M300 459C319 446 339 440 360 440C381 440 401 446 420 459L462 567C478 605 492 652 492 709V860H228V709C228 652 242 605 258 567L300 459Z" fill="url(#shirt-samuel)"/>
+  <path d="M258 730C282 696 317 678 360 678C403 678 438 696 462 730L462 860H258V730Z" fill="#173E31" opacity="0.95"/>
+  <path d="M287 425L235 563L258 579L308 505L287 425Z" fill="#214838" opacity="0.82"/>
+  <path d="M433 425L485 563L462 579L412 505L433 425Z" fill="#214838" opacity="0.82"/>
+  <circle cx="360" cy="214" r="48" fill="#171717"/>
+  <path d="M322 197C334 173 348 157 360 157C372 157 386 173 398 197L407 220C391 230 378 235 360 235C342 235 329 230 313 220L322 197Z" fill="#121212"/>
+</svg>
