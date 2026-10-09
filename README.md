@@ -24,3 +24,15 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Deploy on Render
+
+This app uses TanStack Start server functions for contact inquiries, so deploy it as a **Web Service**, not a Static Site.
+
+The included `render.yaml` defines a free Node Web Service with:
+
+- Build command: `npm install && npm run build`
+- Start command: `npm run start`
+- Health check: `/`
+
+Create the service from the Blueprint in Render. In the service's Environment settings, add the server-only secrets `RESEND_API_KEY` and `RESEND_FROM_EMAIL`. The sender address must be verified in Resend. Do not prefix these values with `VITE_` or commit them to the repository. Contact submissions will continue to show an error until both values are configured correctly.

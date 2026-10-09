@@ -196,14 +196,14 @@ const demoSteps = [
 
 function DashboardMockup() {
   return (
-    <div className="dmrv-dashboard" aria-label="Illustrative climate data dashboard, not live data">
+    <div className="dmrv-dashboard" aria-label="Illustrative climate data dashboard">
       <div className="dmrv-dashboard-head">
         <div>
           <span>PROJECT MONITORING WORKSPACE</span>
           <strong>Climate data overview</strong>
         </div>
         <span className="dmrv-live-label">
-          <i /> Illustrative concept — not live data
+          <i /> Illustrative concept 
         </span>
       </div>
       <div className="dmrv-dashboard-status">
@@ -333,8 +333,7 @@ export function DigitalMrvPage() {
               </Link>
             </div>
             <div className="dmrv-hero-caption">
-              Representative satellite infrastructure in agricultural fields · illustrative stock
-              photography
+              Representative satellite infrastructure in agricultural fields · 
             </div>
           </div>
           <div
@@ -406,7 +405,7 @@ export function DigitalMrvPage() {
             </div>
             <p aria-live="polite">{pipeline[activePipeline]?.[1]}</p>
             <div className="dmrv-illustrative-chip">
-              <i /> Illustrative concept — not live data
+              <i /> Illustrative concept 
             </div>
           </div>
         </div>
@@ -671,8 +670,7 @@ export function DigitalMrvPage() {
           <figure className="dmrv-field-photo">
             <img src={media.data} alt={mediaAlt.data} loading="lazy" decoding="async" />
             <figcaption>
-              Representative satellite infrastructure in agricultural fields · illustrative stock
-              photography, not an ACA project.
+              Representative satellite infrastructure in agricultural fields · 
             </figcaption>
             <span className="dmrv-image-index">FIELD CONTEXT / ILLUSTRATIVE</span>
           </figure>

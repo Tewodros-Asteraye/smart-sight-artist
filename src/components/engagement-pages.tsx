@@ -243,7 +243,7 @@ function EditorialHero({
             Let’s talk <ArrowUpRight />
           </Link>
         </div>
-        <small>Illustrative stock photography · not a company project image</small>
+        <small>Illustrative stock photography · </small>
       </div>
     </section>
   );
@@ -689,7 +689,7 @@ export function ClimateBusinessModelsPage() {
                 <br />
                 project concept
               </strong>
-              <small>Potential resource flows · not measured results</small>
+              <small>Potential resource flows · </small>
             </div>
           </div>
           <div className="business-furi-note" aria-live="polite">

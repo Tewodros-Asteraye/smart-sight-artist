@@ -162,7 +162,7 @@ function StoryVisual({ id, flow }: { id: string; flow: string[] }) {
           <div><span>GHG ACCOUNTING</span><strong><BarChart3 /></strong><small>Calculations & monitoring</small></div>
         </div>
         <div className="mrv-chart">
-          <div><span>Monitoring workflow</span><span>Illustrative concept · not live data</span></div>
+          <div><span>Monitoring workflow</span><span>Illustrative concept · </span></div>
           <svg viewBox="0 0 600 105" role="img" aria-label="Illustrative monitoring line, without live or quantitative data">
             <path d="M0 82 C70 74 88 44 152 56 S240 81 300 46 S404 55 455 28 S535 38 600 12" />
             <path className="chart-baseline" d="M0 98 H600" />
@@ -305,7 +305,7 @@ export function SolutionsPage() {
                 <p>{solution.body}</p>
                 <ul>{solution.capabilities.map(item => <li key={item}><span aria-hidden="true" />{item}</li>)}</ul>
                 {solution.id === 'finance' && <p className="finance-caveat">Carbon finance opportunities depend on project conditions and assessment. Carbon revenue is not assured.</p>}
-                {solution.id === 'mrv' && <div className="illustrative-note">Illustrative concept — not live data</div>}
+                {solution.id === 'mrv' && <div className="illustrative-note">Illustrative concept </div>}
                 {solution.id === 'advisory' && <Link className="story-link" to="/contact">Discuss a project <ArrowUpRight /></Link>}
               </div>
             </article>
@@ -327,7 +327,7 @@ export function SolutionsPage() {
 
       <section className="solutions-featured">
         <img src={media.farm} alt={mediaAlt.farm} loading="lazy" />
-        <div className="featured-image-note">Illustrative stock photography · not a project photograph</div>
+        <div className="featured-image-note">Illustrative stock photography · </div>
         <div className="featured-shade" />
         <div className="shell featured-inner">
           <div className="featured-copy">

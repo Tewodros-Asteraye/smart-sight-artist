@@ -447,7 +447,7 @@ export function ProjectsPage() {
           </a>
         </div>
         <div className="projects-hero-caption">
-          Illustrative stock photography · Malawi landscape · not a company project site
+          Illustrative stock photography · Malawi landscape · 
         </div>
         <div className="projects-hero-index">
           <span>PROJECTS / 01</span>
@@ -532,7 +532,7 @@ export function ProjectsPage() {
                   <ProjectVisual project={project} />
                   {project.imageAlt && (
                     <span className="project-photo-credit">
-                      Illustrative project imagery · representative context only
+                      Illustrative project imagery · 
                     </span>
                   )}
                   <span className="project-card-number">0{index + 1}</span>
@@ -642,7 +642,7 @@ export function ProjectsPage() {
               <span>
                 <Repeat2 /> Circular production concept
               </span>
-              <span>Potential benefits · not measured results</span>
+              <span>Potential benefits · </span>
             </div>
           </div>
         </div>
@@ -665,7 +665,7 @@ export function ProjectsPage() {
                 decoding="async"
               />
               <figcaption>
-                Illustrative crop and soil context · not a project photograph.
+                Illustrative crop and soil context · 
               </figcaption>
             </figure>
           </div>
@@ -826,11 +826,11 @@ export function ProjectsPage() {
           </div>
           <div
             className="mrv-preview"
-            aria-label="Illustrative digital MRV workflow, not live data"
+            aria-label="Illustrative digital MRV workflow "
           >
             <div className="mrv-preview-top">
               <span>PROJECT MONITORING WORKFLOW</span>
-              <strong>ILLUSTRATIVE CONCEPT — NOT LIVE DATA</strong>
+              <strong>ILLUSTRATIVE CONCEPT </strong>
             </div>
             <div className="mrv-preview-flow">
               {[

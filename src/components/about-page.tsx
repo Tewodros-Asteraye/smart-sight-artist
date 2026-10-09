@@ -118,7 +118,7 @@ export function AboutPage() {
         <div className="shell about-split">
           <figure className="about-split-media">
             <img src={media.farm} alt={mediaAlt.farm} loading="lazy" />
-            <figcaption className="image-caption">Illustrative stock photography · Unsplash. Not a photograph of a company project.</figcaption>
+            <figcaption className="image-caption"> stock photography ·</figcaption>
           </figure>
           <div className="about-split-copy">
             <div className="eyebrow">Who we are</div>
