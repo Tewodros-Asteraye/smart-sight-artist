@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Facebook, Instagram, Linkedin, Menu, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-transparent.png";
 export const moreLinks = [
@@ -151,6 +151,12 @@ export function SiteFooter() {
               Climate solutions for cleaner energy, productive agriculture, stronger businesses, and
               resilient communities across Africa.
             </p>
+             <div className="social-row">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Africa Climate Actions on LinkedIn"><Linkedin /></a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Africa Climate Actions on Instagram"><Instagram /></a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Africa Climate Actions on Facebook"><Facebook /></a>
+              <a href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Africa Climate Actions on Telegram"><Send /></a>
+            </div>
           </div>
           <div>
             <h3 className="footer-heading">Explore</h3>
@@ -182,12 +188,17 @@ export function SiteFooter() {
               <br />
               <a href="tel:+251923275050">+251 923 275 050</a>
               <br />
-              <a href="mailto:africaclimate568@gmail.com">africaclimate568@gmail.com</a>
+              <a href="mailto:info@africaclimateactions.com">info@africaclimateactions.com</a>
+               <br />
+              <br />
+              Commercial Registration No. NL/AA/2/0025481/2015
+              <br />
+              TIN: 0083655879
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Africa Climate Actions PLC. All rights reserved.</span>
+          <span>© 2026 Africa Climate Actions PLC. All rights reserved.Commercial Registration No. NL/AA/2/0025481/2015 · TIN 0083655879.</span>
           <div className="footer-bottom-links">
             <span>People · Partnerships · Resilient Africa</span>
             <Link to="/privacy">Privacy Policy</Link>

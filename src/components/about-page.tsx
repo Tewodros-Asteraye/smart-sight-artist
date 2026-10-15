@@ -123,9 +123,9 @@ export function AboutPage() {
           <div className="about-split-copy">
             <div className="eyebrow">Who we are</div>
             <h2>An African climate solutions company.</h2>
-            <p>Africa Climate Actions PLC is an African climate solutions company working at the intersection of technology, agriculture, energy, climate finance, and digital innovation.</p>
-            <p>We support governments, businesses, development organizations, research institutions, investors, and communities to design and implement climate solutions that deliver environmental, economic, and social benefits.</p>
-            <p>Our work spans project design, technical advisory, engineering, renewable energy development, greenhouse gas accounting, carbon finance, digital MRV, climate smart agriculture, circular bioeconomy, and climate related business development.</p>
+            <p>Africa Climate Actions PLC is an African climate solutions company that turns climate priorities into practical projects, technologies, finance opportunities, and measurable results.</p>
+            <p>We work across renewable energy, climate smart agriculture, carbon markets, climate finance, circular bioeconomy, and digital MRV.</p>
+            <p>Our approach brings together science, engineering, finance, digital technology, local knowledge, and partnerships to develop solutions suited to African production systems and development priorities.</p>
           </div>
         </div>
       </section>
@@ -143,12 +143,16 @@ export function AboutPage() {
       <section className="section">
         <div className="shell mv-grid">
           <article className="mv-panel mv-mission">
+            <div className="eyebrow">Our Purpose</div>
+            <p>To turn climate challenges into investable and implementable solutions that improve livelihoods, strengthen food and energy systems, reduce greenhouse gas emissions, and build climate resilience.</p>
+          </article>
+          <article className="mv-panel mv-mission">
             <div className="eyebrow">Our mission</div>
-            <p>To develop and scale practical climate solutions that reduce emissions, strengthen resilience, create economic opportunities, and support Africa’s transition toward sustainable development.</p>
+            <p>To design, finance, implement, and monitor scalable climate solutions that generate measurable environmental, economic, and social value.</p>
           </article>
           <article className="mv-panel mv-vision">
             <div className="eyebrow">Our vision</div>
-            <p>An Africa where climate action supports cleaner energy, productive agriculture, resilient communities, competitive businesses, and inclusive economic growth.</p>
+            <p>To become a trusted African climate solutions company connecting technology, finance, data, and implementation.</p>
           </article>
         </div>
       </section>

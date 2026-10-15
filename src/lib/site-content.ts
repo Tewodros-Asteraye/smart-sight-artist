@@ -4,6 +4,9 @@ import tegenPortrait from '@/assets/team/team-tegen.svg';
 import samuelPortrait from '@/assets/team/team-samuel.svg';
 import esubalewPortrait from '@/assets/team/team-esubalew.svg';
 import abebePortrait from '@/assets/team/team-abebe.svg';
+import habibPortrait from '@/assets/team/team-habib.svg';
+import abiyPortrait from '@/assets/team/team-abiy.svg';
+
 
 export type ContentPage = { title: string; eyebrow: string; intro: string; sections: { title: string; body: string }[]; image?: 'solar' | 'farm' | 'data' | 'landscape' };
 export const pages: Record<string, ContentPage> = {
@@ -72,12 +75,14 @@ export const pages: Record<string, ContentPage> = {
     {title:'Draft notice',body:'This privacy notice is a website draft and should be reviewed against current Ethiopian legal requirements and the company’s actual data-handling practices before final publication.'}]}
 };
 export const team = [
- ['Dr Biruk Alemu','Chief Executive Officer','Provides overall leadership, including corporate strategy, partnerships, project development, client engagement, and company growth.'],
- ['Dr Dejene Girma','Climate Mitigation, Renewable Energy and Carbon Market Finance','Leads technical work related to climate mitigation, renewable energy solutions, carbon markets, and climate finance.'],
- ['Dr Tegen Cherinet','Senior Expert in Climate Smart Agriculture','Supports resilient and resource-efficient climate-smart agricultural production.'],
- ['Dr Samuel Ayalew','AI Expert','Supports artificial intelligence, digital systems, and data analytics for climate, agriculture, energy, and MRV.'],
- ['Dr Esubalew Ayalew','Economist','Supports economic analysis, business modelling, investment assessment, and evaluation of financial and development outcomes.'],
- ['Dr Abebe Bayu','Accounting and Finance','Supports accounting, financial management, budgeting, financial controls, and company finance functions.']
+ ['Dr Biruk Alemu','Chief Executive Officer','Provides overall leadership for company strategy, partnerships, project development, investment engagement, and growth.'],
+ ['Dr Dejene Girma','Climate Mitigation, Renewable Energy and Carbon Market Finance','Leads climate mitigation, renewable energy, carbon market development, climate finance, and low emission investment solutions.'],
+ ['Dr Tegen Cherinet','Senior Expert, Climate Smart Agriculture','Leads climate smart agriculture solutions focused on resilient production, improved resource use, sustainable livestock and crop systems, and climate adaptation.'],
+ ['Dr Samuel Ayalew','Artificial Intelligence Expert','Leads applications of artificial intelligence for climate analytics, intelligent decision support, digital agriculture, and advanced MRV systems.'],
+ ['Dr Esubalew Ayalew','Economist','Leads economic analysis, business modelling, investment assessment, financial feasibility, and evaluation of development outcomes.'],
+ ['Dr Abebe Bayu','Accounting and Finance','Leads accounting, budgeting, financial management, financial controls, and corporate finance functions.'],
+ ['Mr Habib Ibrahim','Lead, Digital Automation and IoT for MRV','Leads sensor integration, connected monitoring systems, automated data collection, IoT infrastructure, and field to digital data flows for MRV.'],
+ ['Mr Abiy Kebede','Digital Intelligence and Data Analytics','Leads data architecture, analytics, dashboards, digital intelligence, and transformation of climate and project data into decision ready informations.']
 ];
 export const teamPortraits: Record<string, string> = {
   'Dr Biruk Alemu': birukPortrait,
@@ -86,6 +91,8 @@ export const teamPortraits: Record<string, string> = {
   'Dr Samuel Ayalew': samuelPortrait,
   'Dr Esubalew Ayalew': esubalewPortrait,
   'Dr Abebe Bayu': abebePortrait,
+  'Mr Habib Ibrahim': habibPortrait,
+  'Mr Abiy Kebede': abiyPortrait,
 };
 export const cycleSteps = [
  ['Livestock','Dairy and livestock production begins the resource cycle.'],['Manure','Manure is collected and managed as a productive resource.'],['Biodigester','Anaerobic digestion converts organic matter into biogas and digestate.'],['Biogas','Captured gas can be cleaned and upgraded for productive uses.'],['Energy','Biogas can support heat, electricity, or potential transport fuel applications.'],['Digestate','The remaining material contains plant nutrients and organic matter.'],['Organic fertilizer','Properly treated digestate returns nutrients to agricultural production.'],['Forage & feed','Forage and feed return to livestock production, completing the cycle.']

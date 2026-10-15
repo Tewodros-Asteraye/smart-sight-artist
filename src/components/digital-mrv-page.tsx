@@ -1362,12 +1362,12 @@ export function DigitalMrvPage() {
             <Link className="dmrv-button dmrv-button-light" to="/contact">
               Discuss your project <ArrowUpRight />
             </Link>
-            <a className="dmrv-button dmrv-button-outline" href="mailto:africaclimate568@gmail.com">
+            <a className="dmrv-button dmrv-button-outline" href="mailto:info@africaclimateactions.com">
               Contact Africa Climate Actions <ArrowUpRight />
             </a>
           </div>
-          <a className="dmrv-email" href="mailto:africaclimate568@gmail.com">
-            africaclimate568@gmail.com
+          <a className="dmrv-email" href="mailto:info@africaclimateactions.com">
+            info@africaclimateactions.com
           </a>
         </div>
       </section>

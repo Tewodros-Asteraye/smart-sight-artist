@@ -38,7 +38,7 @@ describe("deliverContactInquiry", () => {
     expect(result).toEqual({ accepted: true });
     expect(fetcher).toHaveBeenCalledWith("https://api.resend.com/emails", expect.any(Object));
     expect(new Headers(request?.headers).get("Authorization")).toBe("Bearer server-test-key");
-    expect(body.to).toEqual(["africaclimate568@gmail.com"]);
+    expect(body.to).toEqual(["info@africaclimateactions.com"]);
     expect(body.reply_to).toBe("amina@example.org");
     expect(body.subject).toBe("New Climate Project Inquiry — Africa Climate Actions PLC");
     expect(body.text).toContain("Full Name: Amina Example");

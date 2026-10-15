@@ -1622,8 +1622,8 @@ export function LetsTalkPage() {
               interest, or partnership proposal. Let’s explore the next practical step.
             </p>
             <div className="talk-contact-quick">
-              <a href="mailto:africaclimate568@gmail.com">
-                africaclimate568@gmail.com <ArrowUpRight />
+              <a href="mailto:info@africaclimateactions.com">
+                info@africaclimateactions.com <ArrowUpRight />
               </a>
               <a href="tel:+251923275050">
                 +251 923 275 050 <ArrowUpRight />
@@ -1752,7 +1752,7 @@ export function LetsTalkPage() {
                 {submissionState === "success" &&
                   "Thank you. Your inquiry has been sent successfully to Africa Climate Actions PLC. Our team will review it and get back to you."}
                 {submissionState === "error" &&
-                  "We could not send your inquiry right now. Please try again or contact us directly at africaclimate568@gmail.com."}
+                  "We could not send your inquiry right now. Please try again or contact us directly at info@africaclimateactions.com."}
               </p>
             </form>
             <aside className="talk-direct-contact">
@@ -1768,8 +1768,20 @@ export function LetsTalkPage() {
               <a href="tel:+251923275050">
                 +251 923 275 050 <ArrowUpRight />
               </a>
-              <a href="mailto:africaclimate568@gmail.com">
-                africaclimate568@gmail.com <ArrowUpRight />
+              <a href="mailto:info@africaclimateactions.com">
+                info@africaclimateactions.com <ArrowUpRight />
+              </a>
+              <span className="talk-email-label">Leadership · Dr Biruk Alemu</span>
+              <a href="mailto:biruk@africaclimateactions.com">
+                biruk@africaclimateactions.com <ArrowUpRight />
+              </a>
+              <span className="talk-email-label">Projects</span>
+              <a href="mailto:projects@africaclimateactions.com">
+                projects@africaclimateactions.com <ArrowUpRight />
+              </a>
+              <span className="talk-email-label">Partnerships</span>
+              <a href="mailto:partnerships@africaclimateactions.com">
+                partnerships@africaclimateactions.com <ArrowUpRight />
               </a>
               <div className="talk-response">
                 <span>WHAT HAPPENS NEXT?</span>
