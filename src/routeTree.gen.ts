@@ -22,6 +22,8 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as WhyAfricaClimateActionsRouteImport } from './routes/why-africa-climate-actions'
+import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
+import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -88,6 +90,16 @@ const WhyAfricaClimateActionsRoute = WhyAfricaClimateActionsRouteImport.update({
   path: '/why-africa-climate-actions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProjectsRoute,
+} as any)
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProjectsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -100,9 +112,11 @@ export interface FileRoutesByFullPath {
   '/impact': typeof ImpactRoute
   '/partners': typeof PartnersRoute
   '/privacy': typeof PrivacyRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRoute
   '/why-africa-climate-actions': typeof WhyAfricaClimateActionsRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -115,9 +129,10 @@ export interface FileRoutesByTo {
   '/impact': typeof ImpactRoute
   '/partners': typeof PartnersRoute
   '/privacy': typeof PrivacyRoute
-  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/why-africa-climate-actions': typeof WhyAfricaClimateActionsRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
+  '/projects': typeof ProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -131,9 +146,11 @@ export interface FileRoutesById {
   '/impact': typeof ImpactRoute
   '/partners': typeof PartnersRoute
   '/privacy': typeof PrivacyRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRoute
   '/why-africa-climate-actions': typeof WhyAfricaClimateActionsRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +168,8 @@ export interface FileRouteTypes {
     | '/projects'
     | '/services'
     | '/why-africa-climate-actions'
+    | '/projects/$slug'
+    | '/projects/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -163,9 +182,10 @@ export interface FileRouteTypes {
     | '/impact'
     | '/partners'
     | '/privacy'
-    | '/projects'
     | '/services'
     | '/why-africa-climate-actions'
+    | '/projects/$slug'
+    | '/projects'
   id:
     | '__root__'
     | '/'
@@ -181,6 +201,8 @@ export interface FileRouteTypes {
     | '/projects'
     | '/services'
     | '/why-africa-climate-actions'
+    | '/projects/$slug'
+    | '/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -194,7 +216,7 @@ export interface RootRouteChildren {
   ImpactRoute: typeof ImpactRoute
   PartnersRoute: typeof PartnersRoute
   PrivacyRoute: typeof PrivacyRoute
-  ProjectsRoute: typeof ProjectsRoute
+  ProjectsRoute: typeof ProjectsRouteWithChildren
   ServicesRoute: typeof ServicesRoute
   WhyAfricaClimateActionsRoute: typeof WhyAfricaClimateActionsRoute
 }
@@ -292,8 +314,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhyAfricaClimateActionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/': {
+      id: '/projects/'
+      path: '/'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
+    '/projects/$slug': {
+      id: '/projects/$slug'
+      path: '/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
   }
 }
+
+interface ProjectsRouteChildren {
+  ProjectsSlugRoute: typeof ProjectsSlugRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
+}
+
+const ProjectsRouteChildren: ProjectsRouteChildren = {
+  ProjectsSlugRoute: ProjectsSlugRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
+}
+
+const ProjectsRouteWithChildren = ProjectsRoute._addFileChildren(
+  ProjectsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -306,7 +356,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImpactRoute: ImpactRoute,
   PartnersRoute: PartnersRoute,
   PrivacyRoute: PrivacyRoute,
-  ProjectsRoute: ProjectsRoute,
+  ProjectsRoute: ProjectsRouteWithChildren,
   ServicesRoute: ServicesRoute,
   WhyAfricaClimateActionsRoute: WhyAfricaClimateActionsRoute,
 }
