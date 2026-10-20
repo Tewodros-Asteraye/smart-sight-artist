@@ -16,7 +16,6 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
-import { submitContactInquiry } from "@/lib/contact-inquiry";
 import { media, mediaAlt } from "@/lib/media";
 
 const financeStages = [
@@ -1568,45 +1567,103 @@ const projectStages = [
   "Other",
 ];
 
+function buildContactMailto(data: {
+  name: string;
+  organization: string;
+  email: string;
+  phone: string;
+  country: string;
+  inquiryType: string;
+  projectStage: string;
+  message: string;
+}): string {
+  const orgText = data.organization ? ` (${data.organization})` : "";
+  const subject = `Climate Project Inquiry: ${data.inquiryType} — ${data.name}${orgText}`;
+
+  const bodyLines = [
+    `Dear Africa Climate Actions Team,`,
+    ``,
+    `I am submitting an inquiry via the Africa Climate Actions website:`,
+    ``,
+    `--- CONTACT INFORMATION ---`,
+    `Full Name: ${data.name}`,
+    `Organization: ${data.organization || "Not provided"}`,
+    `Work Email: ${data.email}`,
+    `Phone Number: ${data.phone || "Not provided"}`,
+    `Country: ${data.country || "Not provided"}`,
+    ``,
+    `--- INQUIRY DETAILS ---`,
+    `Inquiry Type: ${data.inquiryType}`,
+    `Project Stage: ${data.projectStage || "Not specified"}`,
+    ``,
+    `--- MESSAGE ---`,
+    data.message,
+    ``,
+    `---`,
+    `Prepared via Africa Climate Actions PLC website inquiry form.`,
+  ];
+
+  const body = bodyLines.join("\r\n");
+  return `mailto:info@africaclimateactions.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export function LetsTalkPage() {
   const [topic, setTopic] = useState("General Inquiry");
-  const [submissionState, setSubmissionState] = useState<"idle" | "sending" | "success" | "error">(
-    "idle",
-  );
+  const [submissionState, setSubmissionState] = useState<"idle" | "prepared">("idle");
+  const [mailtoUrl, setMailtoUrl] = useState<string>("");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (submissionState === "sending") return;
 
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
+
     const formData = new FormData(form);
-    if (formData.get("consent") !== "on") return;
+    if (formData.get("consent") !== "on") {
+      const consentInput = form.querySelector<HTMLInputElement>('input[name="consent"]');
+      if (consentInput) {
+        consentInput.focus();
+        consentInput.reportValidity();
+      }
+      return;
+    }
 
     const getValue = (field: string) => {
       const value = formData.get(field);
-      return typeof value === "string" ? value : "";
+      return typeof value === "string" ? value.trim() : "";
     };
 
-    setSubmissionState("sending");
-    try {
-      const result = await submitContactInquiry({
-        data: {
-          name: getValue("name"),
-          organization: getValue("organization"),
-          email: getValue("email"),
-          phone: getValue("phone"),
-          country: getValue("country"),
-          inquiryType: getValue("inquiryType"),
-          projectStage: getValue("projectStage"),
-          message: getValue("message"),
-          consent: true,
-          website: getValue("website"),
-        },
-      });
-      setSubmissionState(result.accepted ? "success" : "error");
-    } catch {
-      setSubmissionState("error");
+    const name = getValue("name");
+    const email = getValue("email");
+    const message = getValue("message");
+    const inquiryType = getValue("inquiryType") || topic;
+
+    if (!name || !email || !message) {
+      form.reportValidity();
+      return;
+    }
+
+    const uri = buildContactMailto({
+      name,
+      organization: getValue("organization"),
+      email,
+      phone: getValue("phone"),
+      country: getValue("country"),
+      inquiryType,
+      projectStage: getValue("projectStage"),
+      message,
+    });
+
+    setMailtoUrl(uri);
+    setSubmissionState("prepared");
+
+    if (typeof window !== "undefined") {
+      const link = document.createElement("a");
+      link.href = uri;
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   };
 
@@ -1661,11 +1718,7 @@ export function LetsTalkPage() {
             ))}
           </div>
           <div className="talk-form-layout">
-            <form
-              className="talk-form"
-              onSubmit={handleSubmit}
-              aria-busy={submissionState === "sending"}
-            >
+            <form className="talk-form" onSubmit={handleSubmit}>
               <div className="talk-form-head">
                 <span>INQUIRY FORM</span>
                 <small>Required fields are marked *</small>
@@ -1735,25 +1788,31 @@ export function LetsTalkPage() {
               <button
                 className="engagement-button engagement-button-green"
                 type="submit"
-                disabled={submissionState === "sending"}
               >
-                {submissionState === "sending" ? "Sending inquiry…" : "Prepare email inquiry"}
-                {submissionState !== "sending" && <ArrowUpRight />}
+                Prepare email inquiry <ArrowUpRight />
               </button>
               <p className="talk-form-disclaimer">
-                Your inquiry is sent to Africa Climate Actions only after the email provider
-                confirms acceptance. Submitted form content is not stored by this website.
+                Clicking “Prepare email inquiry” will open your default email application with your inquiry details pre-filled. You must click Send in your email application to deliver the message to info@africaclimateactions.com.
               </p>
-              <p
-                className={`talk-form-status is-${submissionState}`}
-                role="status"
-                aria-live="polite"
-              >
-                {submissionState === "success" &&
-                  "Thank you. Your inquiry has been sent successfully to Africa Climate Actions PLC. Our team will review it and get back to you."}
-                {submissionState === "error" &&
-                  "We could not send your inquiry right now. Please try again or contact us directly at info@africaclimateactions.com."}
-              </p>
+              {submissionState === "prepared" && (
+                <div
+                  className="talk-form-status is-success"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <p>
+                    Your email draft has been prepared and opened in your email application. Please review the details and click <strong>Send</strong> in your email app.
+                  </p>
+                  {mailtoUrl && (
+                    <p className="talk-form-reopen">
+                      Didn’t open automatically?{" "}
+                      <a href={mailtoUrl} className="text-link">
+                        Click here to open email draft <ArrowUpRight className="w-3.5 h-3.5 inline" />
+                      </a>
+                    </p>
+                  )}
+                </div>
+              )}
             </form>
             <aside className="talk-direct-contact">
               <div className="engagement-eyebrow engagement-eyebrow-green">Direct contact</div>
@@ -1768,10 +1827,11 @@ export function LetsTalkPage() {
               <a href="tel:+251923275050">
                 +251 923 275 050 <ArrowUpRight />
               </a>
+              <span className="talk-email-label">General inquiries</span>
               <a href="mailto:info@africaclimateactions.com">
                 info@africaclimateactions.com <ArrowUpRight />
               </a>
-              <span className="talk-email-label">Leadership · Dr Biruk Alemu</span>
+              <span className="talk-email-label">Leadership — Dr. Biruk Alemu</span>
               <a href="mailto:biruk@africaclimateactions.com">
                 biruk@africaclimateactions.com <ArrowUpRight />
               </a>

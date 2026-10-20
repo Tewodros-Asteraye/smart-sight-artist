@@ -16,7 +16,7 @@ type DeliveryOptions = {
   now?: number;
 };
 
-const inbox = "africaclimate568@gmail.com";
+const inbox = "info@africaclimateactions.com";
 const duplicateWindowMs = 30_000;
 const recentSubmissions = new Map<string, number>();
 

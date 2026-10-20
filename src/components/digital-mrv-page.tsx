@@ -575,8 +575,8 @@ export function DigitalMrvPage() {
             </div>
             <div className="dmrv-ecosystem-detail" aria-live="polite">
               <span>COMPONENT / {String(activeNode + 1).padStart(2, "0")} OF 12</span>
-              <h3>{ecosystemNodes[activeNode].name}</h3>
-              <p>{ecosystemNodes[activeNode].note}</p>
+              <h3>{ecosystemNodes[activeNode]?.name ?? ""}</h3>
+              <p>{ecosystemNodes[activeNode]?.note ?? ""}</p>
               <div>
                 <i /> Connected to the broader monitoring workflow
               </div>
@@ -643,8 +643,8 @@ export function DigitalMrvPage() {
           </div>
           <div className="dmrv-pipeline-detail" aria-live="polite">
             <span>STEP {String(activePipeline + 1).padStart(2, "0")}</span>
-            <strong>{pipeline[activePipeline][0]}</strong>
-            <p>{pipeline[activePipeline][1]}</p>
+            <strong>{pipeline[activePipeline]?.[0] ?? ""}</strong>
+            <p>{pipeline[activePipeline]?.[1] ?? ""}</p>
           </div>
         </div>
       </section>
