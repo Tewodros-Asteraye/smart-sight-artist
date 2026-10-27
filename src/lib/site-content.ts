@@ -1,4 +1,4 @@
-import birukPortrait from '@/assets/team/team-biruk.svg';
+import birukPortrait from '@/assets/team/team-biruk.jpg';
 import dejenePortrait from '@/assets/team/team-dejene.svg';
 import tegenPortrait from '@/assets/team/team-tegen.svg';
 import samuelPortrait from '@/assets/team/team-samuel.svg';

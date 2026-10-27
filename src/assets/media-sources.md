@@ -47,3 +47,6 @@ Official user-supplied image.png, used unchanged. Favicon is a proportional, pad
 
 ## Partner logos
 Official partner logos supplied by the client, used unchanged. Homepage logo is the official logo with the black background made transparent (colours unchanged). Favicon is the emblem from that same logo.
+
+## Team portraits
+Official client-supplied executive portrait for Dr. Biruk Alemu (`src/assets/team/team-biruk.jpg`). Other team portraits are SVG avatar representations.
